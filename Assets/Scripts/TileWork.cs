@@ -5,24 +5,16 @@ using UnityEngine.Tilemaps;
 
 public class TileWork : MonoBehaviour
 {
-    public Tile holeTile;
-    public Tilemap tileMap;
-    void Start()
-    {
-        
-    }
+    public GridSystem gridSystem;
 
     // Update is called once per frame
     void Update()
     {
-        Vector3Int currentCell = tileMap.WorldToCell(transform.position);
         //Debug.Log(currentCell);
 
         if (Input.GetKey(KeyCode.Space))
         {
-            tileMap.SetTile(currentCell, null);
-            tileMap.SetTile(currentCell, holeTile);
-
+            gridSystem.Dig(transform.position);
         }
     }
 }
