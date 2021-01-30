@@ -17,7 +17,7 @@ public class GridSystem : MonoBehaviour
     [SerializeField] int _skeletonTotal;
     [SerializeField] Transform _gridOrigin;
     [SerializeField] float _digDelay = 0.5f; 
-    [SerializeField] MapConfig _mapConfig;
+    [SerializeField] List<MapConfig> _mapConfigs;
 
     [Header("TileMaps Settings")]
     [SerializeField] Tilemap _tileMapHoles;
@@ -41,7 +41,8 @@ public class GridSystem : MonoBehaviour
                 Vector2 position = new Vector2(_gridOrigin.position.x + x, _gridOrigin.position.y + y);
                 Vector3Int cellPosition = _tileMap.WorldToCell(position);
 
-                CellConfig config = _mapConfig.cellConfig.Find(c => c.x == cellPosition.x && c.y == cellPosition.y);
+                MapConfig mapConfig = _mapConfigs[UnityEngine.Random.Range(0, _mapConfigs.Count)];
+                CellConfig config = mapConfig.cellConfig.Find(c => c.x == cellPosition.x && c.y == cellPosition.y);
                 TileBase tile = null;
                 TileType tileType = TileType.NORMAL;
 
