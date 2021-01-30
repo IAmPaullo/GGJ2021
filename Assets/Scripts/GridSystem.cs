@@ -12,6 +12,7 @@ public class GridSystem : MonoBehaviour
     [SerializeField] Transform _gridOrigin;
     [SerializeField] Tilemap _tileMap;
     [SerializeField] TileBase _holeTile;
+    [SerializeField] TumbaCell _tumbaCellBehaviour;
     [SerializeField] List<CellConfig> _cellConfig;
 
     private List<Cell> grid;
@@ -54,12 +55,20 @@ public class GridSystem : MonoBehaviour
         _currentCellPosition = _tileMap.WorldToCell(cellPosition);
         Cell cell = GetCellAtPosition(_currentCellPosition);
 
-        if(!cell.isDigged)
+        int adjacents = GetAdjacentSkeletons();
+        Debug.Log($"Adjacents: {adjacents}");
+
+        if (!cell.isDigged)
         {
             if (cell.tile != null)
             {
                 _tileMap.SetTile(_currentCellPosition, cell.tile);
                 cell.Dig(cell.worldPosition);
+            }
+            else if(adjacents > 0)
+            {
+                _tumbaCellBehaviour.Dig(cell.worldPosition);
+                _tileMap.SetTile(_currentCellPosition, _holeTile);
             }
             else
             {
@@ -67,9 +76,6 @@ public class GridSystem : MonoBehaviour
             }
 
             cell.isDigged = true;
-
-            int adjacents = GetAdjacentSkeletons();
-            Debug.Log($"Adjacents: {adjacents}");
         }
             
         Debug.Log($"({cell.tilemapPosition.x}, {cell.tilemapPosition.y})");

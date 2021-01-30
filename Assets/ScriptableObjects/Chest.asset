@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98272d2dc62a2a342afca1aee0530421, type: 3}
+  m_Script: {fileID: 11500000, guid: f1fb10825cd18ad41bd3f707adbdc1a4, type: 3}
   m_Name: Chest
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: 0e14cbcaca2724740a82d3e523e5d029, type: 2}
