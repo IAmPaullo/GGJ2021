@@ -1,43 +1,55 @@
 fileFormatVersion: 2
-guid: c539e3eb71de952449f6f6ede190f6a0
+guid: b65d2620d3574cc4db0559382a2c629f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9043038900238015695
-    second: skelton walk_0
+      213: 8044946406797904040
+    second: WalkDown_1
   - first:
-      213: -4861057317899732975
-    second: skelton walk_1
+      213: 7356391187152564899
+    second: WalkDown_2
   - first:
-      213: 8542369884779030989
-    second: skelton walk_2
+      213: -2517190774366652634
+    second: WalkDown_3
   - first:
-      213: -4515040503909474408
-    second: skelton walk_3
+      213: -5645156775167598702
+    second: WalkDown_4
   - first:
-      213: 3503801225469167667
-    second: skelton walk_4
+      213: 1507223143834750338
+    second: WalkRight_1
   - first:
-      213: 1346842751793325669
-    second: skelton walk_5
+      213: -67511824996272451
+    second: WalkRight_2
   - first:
-      213: -4708422822140837366
-    second: skelton walk_6
+      213: -1599705775738843107
+    second: WalkRight_3
   - first:
-      213: -1030342064278605399
-    second: skelton walk_7
+      213: 6299517596250976182
+    second: WalkRight_4
   - first:
-      213: 7304821990727007692
-    second: skelton walk_8
+      213: 9013289343780747548
+    second: WalkUp_1
   - first:
-      213: -481051426190336456
-    second: skelton walk_9
+      213: -3843606317406079009
+    second: WalkUp_2
   - first:
-      213: 2889706843949496639
-    second: skelton walk_10
+      213: 7838626980159724777
+    second: WalkUp_3
   - first:
-      213: -5458086513840660241
-    second: skelton walk_11
+      213: -3738598893290790271
+    second: WalkUp_4
+  - first:
+      213: -6350588602416144940
+    second: WalkLeft_1
+  - first:
+      213: -455384977558710789
+    second: WalkLeft_2
+  - first:
+      213: -6427487003819538225
+    second: WalkLeft_3
+  - first:
+      213: 1856254320673585975
+    second: WalkLeft_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -81,7 +93,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -135,7 +147,91 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skelton walk_0
+      name: WalkDown_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a88e3e022465af60800000000000000
+      internalID: 8044946406797904040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkDown_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2fa031fc6271660800000000000000
+      internalID: 7356391187152564899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkDown_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6273cfdc354211dd0800000000000000
+      internalID: -2517190774366652634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkDown_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29fdeb282df58a1b0800000000000000
+      internalID: -5645156775167598702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkRight_1
       rect:
         serializedVersion: 2
         x: 0
@@ -143,20 +239,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1332645480ca08280800000000000000
-      internalID: -9043038900238015695
+      spriteID: 28d8485b67bbae410800000000000000
+      internalID: 1507223143834750338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_1
+      name: WalkRight_2
       rect:
         serializedVersion: 2
         x: 16
@@ -164,20 +260,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 118f5c5df1e0a8cb0800000000000000
-      internalID: -4861057317899732975
+      spriteID: db675f45a56201ff0800000000000000
+      internalID: -67511824996272451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_2
+      name: WalkRight_3
       rect:
         serializedVersion: 2
         x: 32
@@ -185,20 +281,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc9af3a96289c8670800000000000000
-      internalID: 8542369884779030989
+      spriteID: d1012f39214bcc9e0800000000000000
+      internalID: -1599705775738843107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_3
+      name: WalkRight_4
       rect:
         serializedVersion: 2
         x: 48
@@ -206,20 +302,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89f99f9559a5751c0800000000000000
-      internalID: -4515040503909474408
+      spriteID: 6bfacd4a0e16c6750800000000000000
+      internalID: 6299517596250976182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_4
+      name: WalkUp_1
       rect:
         serializedVersion: 2
         x: 0
@@ -227,20 +323,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3380baf86a000a030800000000000000
-      internalID: 3503801225469167667
+      spriteID: c197dd957e2a51d70800000000000000
+      internalID: 9013289343780747548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_5
+      name: WalkUp_2
       rect:
         serializedVersion: 2
         x: 16
@@ -248,20 +344,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56663fcc852f0b210800000000000000
-      internalID: 1346842751793325669
+      spriteID: fd7309a2b64c8aac0800000000000000
+      internalID: -3843606317406079009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_6
+      name: WalkUp_3
       rect:
         serializedVersion: 2
         x: 32
@@ -269,20 +365,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0204f9b36258aeb0800000000000000
-      internalID: -4708422822140837366
+      spriteID: 9ec963725b568cc60800000000000000
+      internalID: 7838626980159724777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_7
+      name: WalkUp_4
       rect:
         serializedVersion: 2
         x: 48
@@ -290,20 +386,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a1f78df95d73b1f0800000000000000
-      internalID: -1030342064278605399
+      spriteID: 182ebbf4d14dd1cc0800000000000000
+      internalID: -3738598893290790271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_8
+      name: WalkLeft_1
       rect:
         serializedVersion: 2
         x: 0
@@ -311,20 +407,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccdbeb0e5e0ff5560800000000000000
-      internalID: 7304821990727007692
+      spriteID: 4dd575e105d2ed7a0800000000000000
+      internalID: -6350588602416144940
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_9
+      name: WalkLeft_2
       rect:
         serializedVersion: 2
         x: 16
@@ -332,20 +428,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83eda3fc646f259f0800000000000000
-      internalID: -481051426190336456
+      spriteID: bf5509096c52ea9f0800000000000000
+      internalID: -455384977558710789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_10
+      name: WalkLeft_3
       rect:
         serializedVersion: 2
         x: 32
@@ -353,20 +449,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f39ff92701d4a1820800000000000000
-      internalID: 2889706843949496639
+      spriteID: fc885e2df9afcc6a0800000000000000
+      internalID: -6427487003819538225
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_11
+      name: WalkLeft_4
       rect:
         serializedVersion: 2
         x: 48
@@ -374,14 +470,14 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe06d2ddb3bf044b0800000000000000
-      internalID: -5458086513840660241
+      spriteID: 73b7884487db2c910800000000000000
+      internalID: 1856254320673585975
       vertices: []
       indices: 
       edges: []

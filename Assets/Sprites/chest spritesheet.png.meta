@@ -1,43 +1,25 @@
 fileFormatVersion: 2
-guid: c539e3eb71de952449f6f6ede190f6a0
+guid: 9166f7855fec5f644adf7b5fa1c15ce8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9043038900238015695
-    second: skelton walk_0
+      213: -7993234042208920668
+    second: chest spritesheet_0
   - first:
-      213: -4861057317899732975
-    second: skelton walk_1
+      213: -2465545438893417765
+    second: chest spritesheet_1
   - first:
-      213: 8542369884779030989
-    second: skelton walk_2
+      213: -6272988389352206058
+    second: chest spritesheet_2
   - first:
-      213: -4515040503909474408
-    second: skelton walk_3
+      213: 5698351326616703829
+    second: chest spritesheet_3
   - first:
-      213: 3503801225469167667
-    second: skelton walk_4
+      213: -5225370653483276913
+    second: chest spritesheet_4
   - first:
-      213: 1346842751793325669
-    second: skelton walk_5
-  - first:
-      213: -4708422822140837366
-    second: skelton walk_6
-  - first:
-      213: -1030342064278605399
-    second: skelton walk_7
-  - first:
-      213: 7304821990727007692
-    second: skelton walk_8
-  - first:
-      213: -481051426190336456
-    second: skelton walk_9
-  - first:
-      213: 2889706843949496639
-    second: skelton walk_10
-  - first:
-      213: -5458086513840660241
-    second: skelton walk_11
+      213: 4481293730818113049
+    second: chest spritesheet_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -81,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -135,11 +117,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skelton walk_0
+      name: chest spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 18
         width: 16
         height: 16
       alignment: 0
@@ -149,18 +131,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1332645480ca08280800000000000000
-      internalID: -9043038900238015695
+      spriteID: 4abd3931df3521190800000000000000
+      internalID: -7993234042208920668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_1
+      name: chest spritesheet_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 18
         width: 16
         height: 16
       alignment: 0
@@ -170,18 +152,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 118f5c5df1e0a8cb0800000000000000
-      internalID: -4861057317899732975
+      spriteID: bda5c218c7f98cdd0800000000000000
+      internalID: -2465545438893417765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_2
+      name: chest spritesheet_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 18
         width: 16
         height: 16
       alignment: 0
@@ -191,39 +173,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc9af3a96289c8670800000000000000
-      internalID: 8542369884779030989
+      spriteID: 611138cab4ed1f8a0800000000000000
+      internalID: -6272988389352206058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89f99f9559a5751c0800000000000000
-      internalID: -4515040503909474408
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skelton walk_4
+      name: chest spritesheet_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 2
         width: 16
         height: 16
       alignment: 0
@@ -233,18 +194,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3380baf86a000a030800000000000000
-      internalID: 3503801225469167667
+      spriteID: 5535d54275c941f40800000000000000
+      internalID: 5698351326616703829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_5
+      name: chest spritesheet_4
       rect:
         serializedVersion: 2
         x: 16
-        y: 16
+        y: 2
         width: 16
         height: 16
       alignment: 0
@@ -254,18 +215,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56663fcc852f0b210800000000000000
-      internalID: 1346842751793325669
+      spriteID: f85e06b6311cb77b0800000000000000
+      internalID: -5225370653483276913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skelton walk_6
+      name: chest spritesheet_5
       rect:
         serializedVersion: 2
         x: 32
-        y: 16
+        y: 2
         width: 16
         height: 16
       alignment: 0
@@ -275,113 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0204f9b36258aeb0800000000000000
-      internalID: -4708422822140837366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skelton walk_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a1f78df95d73b1f0800000000000000
-      internalID: -1030342064278605399
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skelton walk_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ccdbeb0e5e0ff5560800000000000000
-      internalID: 7304821990727007692
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skelton walk_9
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83eda3fc646f259f0800000000000000
-      internalID: -481051426190336456
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skelton walk_10
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f39ff92701d4a1820800000000000000
-      internalID: 2889706843949496639
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skelton walk_11
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe06d2ddb3bf044b0800000000000000
-      internalID: -5458086513840660241
+      spriteID: 91e399fb7e0c03e30800000000000000
+      internalID: 4481293730818113049
       vertices: []
       indices: 
       edges: []

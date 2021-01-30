@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -6,14 +7,22 @@ using UnityEngine.Tilemaps;
 
 public class GridSystem : MonoBehaviour
 {
-    [SerializeField] GameObject _cellPrefab;
+    [Header("RandomSettings")]
+    [SerializeField] SkeletonCell _skeletonCell;
+    [SerializeField] ChestCell _chestCell;
+
+    [Header("Grid Settings")]
     [SerializeField] int _width;
     [SerializeField] int _height;
     [SerializeField] Transform _gridOrigin;
+    [SerializeField] float _digDelay = 0.5f; 
+    [SerializeField] List<CellConfig> _cellConfig;
+
+    [Header("TileMaps Settings")]
+    [SerializeField] Tilemap _tileMapHoles;
     [SerializeField] Tilemap _tileMap;
     [SerializeField] TileBase _holeTile;
     [SerializeField] TumbaCell _tumbaCellBehaviour;
-    [SerializeField] List<CellConfig> _cellConfig;
 
     private List<Cell> grid;
     private Vector3Int _currentCellPosition;
@@ -49,6 +58,13 @@ public class GridSystem : MonoBehaviour
             }
         }
     }
+    public bool CanDig(Vector2 playerPosition)
+    {
+        var cellPos = _tileMap.WorldToCell(playerPosition);
+        Cell cell = GetCellAtPosition(cellPos);
+        
+        return playerPosition.x == cell.worldPosition.x && playerPosition.y == cell.worldPosition.y;
+    }
 
     public void Dig(Vector2 cellPosition)
     {
@@ -62,23 +78,36 @@ public class GridSystem : MonoBehaviour
         {
             if (cell.tile != null)
             {
-                _tileMap.SetTile(_currentCellPosition, cell.tile);
-                cell.Dig(cell.worldPosition);
+                ChangeTile(_tileMap, cell.tile, _digDelay, () => 
+                {
+                    cell.Dig(cell.worldPosition);
+                });
             }
             else if(adjacents > 0)
             {
-                _tumbaCellBehaviour.Dig(cell.worldPosition);
-                _tileMap.SetTile(_currentCellPosition, _holeTile);
+                ChangeTile(_tileMapHoles, _holeTile, _digDelay, () =>
+                {
+                    _tumbaCellBehaviour.Dig(cell.worldPosition);
+                });
             }
             else
             {
-                _tileMap.SetTile(_currentCellPosition, _holeTile);
+                ChangeTile(_tileMapHoles, _holeTile, _digDelay, null);
             }
 
             cell.isDigged = true;
         }
             
         Debug.Log($"({cell.tilemapPosition.x}, {cell.tilemapPosition.y})");
+    }
+
+    private void ChangeTile(Tilemap tilemap, TileBase tile, float delay, Action onChanged)
+    {
+        StartCoroutine(DoAfterTime(delay, () =>
+        {
+            tilemap.SetTile(_currentCellPosition, tile);
+            onChanged?.Invoke();
+        }));
     }
 
     public int GetAdjacentSkeletons()
@@ -115,6 +144,12 @@ public class GridSystem : MonoBehaviour
     public Cell GetCellAtPosition(Vector3Int position)
     {
         return grid.Find(c => c.tilemapPosition.x == position.x && c.tilemapPosition.y == position.y);
+    }
+
+    private IEnumerator DoAfterTime(float delay, Action action)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        action?.Invoke();
     }
 }
 
