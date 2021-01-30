@@ -17,6 +17,5 @@ MonoBehaviour:
   OnDig:
     m_PersistentCalls:
       m_Calls: []
-  position: {x: 0, y: 0, z: 0}
-  skullPrefab: {fileID: 5756625996775810243, guid: 9d1ec2076e19e1b4d828e7beea45164c,
+  tumbaPrefab: {fileID: 4908811172159130353, guid: d1dcbb8273ecb784788e7c942228e629,
     type: 3}

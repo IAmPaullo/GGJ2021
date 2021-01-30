@@ -3,11 +3,12 @@
 [CreateAssetMenu]
 public class TumbaCell : CellBehaviour
 {
-    public GameObject skullPrefab;
+    public GameObject tumbaPrefab;
 
     public override void Dig(Vector2 position)
     {
         base.Dig(position);
-        Instantiate(skullPrefab, position, Quaternion.identity);
+        var tumba = Instantiate(tumbaPrefab, position, Quaternion.identity);
+        tumba.GetComponent<Tumba>().SetText("3");
     }
 }

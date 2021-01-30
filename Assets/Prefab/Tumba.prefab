@@ -58,7 +58,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 99
   m_TargetDisplay: 0
 --- !u!114 &702673122799358370
 MonoBehaviour:
@@ -317,6 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 267758991402734107}
   - component: {fileID: 8580293788995488684}
+  - component: {fileID: -6534923066851131066}
   m_Layer: 0
   m_Name: Tumba
   m_TagString: Untagged
@@ -377,7 +378,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 6615552581111873751, guid: 763f78c39163d3c4a8dbae95a7631fd0,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -390,3 +391,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-6534923066851131066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4908811172159130353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf5ecbad8594dd34eb67f48a50a9cbef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tumbaText: {fileID: 6670896076735445976}
