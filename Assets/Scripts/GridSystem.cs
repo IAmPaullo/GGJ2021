@@ -97,8 +97,9 @@ public class GridSystem : MonoBehaviour
 
             if (cell != null)
             {
-                if (cell.tileType == TileType.SKELETON)
-                    total++;
+                if(!cell.isDigged)
+                    if (cell.tileType == TileType.SKELETON)
+                        total++;
             }
         }
 
