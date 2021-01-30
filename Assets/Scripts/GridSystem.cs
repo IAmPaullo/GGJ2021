@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 
 public class GridSystem : MonoBehaviour
@@ -37,7 +38,12 @@ public class GridSystem : MonoBehaviour
                     tileType = config.cellBehaviour.tileType;
                 }
 
-                Cell cell = new Cell(cellPosition, tile, tileType,() => { config.cellBehaviour.OnDig?.Invoke(); });
+                Cell cell = new Cell(cellPosition, tile, tileType, 
+                () => 
+                {
+                    config.cellBehaviour.Dig();
+                });
+
                 grid.Add(cell);
             }
         }

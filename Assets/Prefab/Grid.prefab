@@ -22166,16 +22166,14 @@ MonoBehaviour:
   _height: 9
   _gridOrigin: {fileID: 6162501927504504817}
   _tileMap: {fileID: 6162501926326881468}
-  _chestTilemap: {fileID: 6162501928225339502}
   _holeTile: {fileID: 11400000, guid: e01e1a5b8b05ac8448b0def763ac82d6, type: 2}
-  _chestTile: {fileID: 11400000, guid: 0e14cbcaca2724740a82d3e523e5d029, type: 2}
   _cellConfig:
   - x: 5
     y: 2
-    tile: {fileID: 11400000, guid: 0e14cbcaca2724740a82d3e523e5d029, type: 2}
+    cellBehaviour: {fileID: 11400000, guid: 5a2e4c9a910f3384ba7cc53b0c4b095c, type: 2}
   - x: 0
     y: 0
-    tile: {fileID: 11400000, guid: ab993b4d4ae082f48af7e878a872c0bb, type: 2}
+    cellBehaviour: {fileID: 11400000, guid: 5a2e4c9a910f3384ba7cc53b0c4b095c, type: 2}
 --- !u!1 &6162501928225339501
 GameObject:
   m_ObjectHideFlags: 0

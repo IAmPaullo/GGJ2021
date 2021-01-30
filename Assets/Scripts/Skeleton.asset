@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98272d2dc62a2a342afca1aee0530421, type: 3}
+  m_Script: {fileID: 11500000, guid: d017a15bf581cfc48a3054307ad193a3, type: 3}
   m_Name: Skeleton
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: ab993b4d4ae082f48af7e878a872c0bb, type: 2}
@@ -17,3 +17,4 @@ MonoBehaviour:
   OnDig:
     m_PersistentCalls:
       m_Calls: []
+  timeAmount: 5

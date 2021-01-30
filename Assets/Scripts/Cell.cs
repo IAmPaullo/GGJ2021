@@ -10,12 +10,13 @@ public class Cell
     public TileType tileType;
     public Action OnDig;
 
-    public Cell(Vector3Int position, TileBase tile, TileType tileType, Action onDig)
+    public Cell(Vector3Int position, TileBase tile, TileType tileType, Action onDigCallback)
     {
         this.position = position;
         isDigged = false;
         this.tile = tile;
         this.tileType = tileType;
+        OnDig = onDigCallback;
     }
     
     public virtual void Dig() 

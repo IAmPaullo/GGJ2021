@@ -21,25 +21,17 @@ public class GameManager : MonoBehaviour
         UpdateTime();
     }
 
-
     void UpdateTime()
     {
         currentTime -= 1 * Time.deltaTime;
-        
-       
-
         timeText.text = "Time: " + Mathf.RoundToInt(currentTime).ToString();
-        
 
         if (currentTime <= 0)
             currentTime = 0;
-
     }
 
-
-
-
-
-
-
+    public void DecreaseTimer(float amount)
+    {
+        currentTime -= amount;
+    }
 }
