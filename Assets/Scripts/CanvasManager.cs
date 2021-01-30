@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
 {
+    [SerializeField] float _delayEndGame = 2f;
+    [SerializeField] float _delayTimeChange = 2f;
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] TextMeshProUGUI timeChange;
     [SerializeField] GameObject _gameOverPanel;
@@ -31,7 +33,7 @@ public class CanvasManager : MonoBehaviour
         timeChange.gameObject.SetActive(true);
         timeChange.color = Color.green;
         timeChange.text = $"+{roundAmount}";
-        StartCoroutine(DoAfterTime(2f, () =>
+        StartCoroutine(DoAfterTime(_delayTimeChange, () =>
         {
             timeChange.gameObject.SetActive(false);
         }));
@@ -43,7 +45,7 @@ public class CanvasManager : MonoBehaviour
         timeChange.gameObject.SetActive(true);
         timeChange.color = Color.red;
         timeChange.text = $"-{roundAmount}";
-        StartCoroutine(DoAfterTime(2f, () =>
+        StartCoroutine(DoAfterTime(_delayTimeChange, () =>
         {
             timeChange.gameObject.SetActive(false);
         }));
@@ -51,7 +53,7 @@ public class CanvasManager : MonoBehaviour
 
     public void ShowGameOver()
     {
-        StartCoroutine(DoAfterTime(1f, () => 
+        StartCoroutine(DoAfterTime(_delayEndGame, () => 
         {
             _gameOverPanel.SetActive(true);
             _victoryPanel.SetActive(false);
@@ -60,7 +62,7 @@ public class CanvasManager : MonoBehaviour
 
     public void ShowVictory()
     {
-        StartCoroutine(DoAfterTime(1f, () =>
+        StartCoroutine(DoAfterTime(_delayEndGame, () =>
         {
             _gameOverPanel.SetActive(false);
             _victoryPanel.SetActive(true);

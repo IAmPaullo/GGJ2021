@@ -3,9 +3,11 @@
 [CreateAssetMenu]
 public class ChestCell : CellBehaviour
 {
-    public override void Dig(Vector2 vector2)
+    public GameObject chestPrefab;
+    public override void Dig(Vector2 position)
     {
-        base.Dig(vector2);
+        base.Dig(position);
         FindObjectOfType<GameManager>().FoundChest();
+        Instantiate(chestPrefab, position, Quaternion.identity);
     }
 }

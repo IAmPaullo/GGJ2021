@@ -18,10 +18,6 @@ public class TileWork : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(currentCell);
-
-
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (gridSystem.CanDig(transform.position))
@@ -29,7 +25,7 @@ public class TileWork : MonoBehaviour
                 _playerController.canMove = false;
 
                 _animator.SetTrigger("Dig");
-                gridSystem.Dig(transform.position);
+                gridSystem.Dig(((Vector2)transform.position) + _playerController.facingDirection);
 
                 StartCoroutine(DoAfterTime(.5f, () => { _playerController.canMove = true; }));
             }

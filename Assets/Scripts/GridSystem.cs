@@ -66,9 +66,9 @@ public class GridSystem : MonoBehaviour
         return playerPosition.x == cell.worldPosition.x && playerPosition.y == cell.worldPosition.y;
     }
 
-    public void Dig(Vector2 cellPosition)
+    public void Dig(Vector2 playerPosition)
     {
-        _currentCellPosition = _tileMap.WorldToCell(cellPosition);
+        _currentCellPosition = _tileMap.WorldToCell(playerPosition);
         Cell cell = GetCellAtPosition(_currentCellPosition);
 
         int adjacents = GetAdjacentSkeletons();

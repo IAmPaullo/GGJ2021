@@ -8,10 +8,9 @@ public class PlayerController : MonoBehaviour
     public Transform movePoint;
     Vector2 mvmnt;
     public Animator animator;
-
     public LayerMask whatStopsMovement;
-
     public bool canMove = true;
+    public Vector2 facingDirection;
 
     private void Start()
     {
@@ -41,9 +40,9 @@ public class PlayerController : MonoBehaviour
                     animator.SetFloat("Horizontal", mvmnt.x);
                     animator.SetFloat("Vertical", mvmnt.y);
                     movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
+                    facingDirection = new Vector2(mvmnt.x, mvmnt.y).normalized;
                 }
             }
-
             else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
             {
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), .2f, whatStopsMovement))
@@ -51,8 +50,11 @@ public class PlayerController : MonoBehaviour
                     animator.SetFloat("Horizontal", mvmnt.x);
                     animator.SetFloat("Vertical", mvmnt.y);
                     movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
+                    facingDirection = new Vector2(mvmnt.x, mvmnt.y).normalized;
                 }
             }
         }
+
+        Debug.DrawRay(transform.position, facingDirection, Color.red);
     }
 }

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1fb10825cd18ad41bd3f707adbdc1a4, type: 3}
   m_Name: Chest
   m_EditorClassIdentifier: 
-  tile: {fileID: 11400000, guid: 0e14cbcaca2724740a82d3e523e5d029, type: 2}
+  tile: {fileID: 11400000, guid: e01e1a5b8b05ac8448b0def763ac82d6, type: 2}
   tileType: 3
   OnDig:
     m_PersistentCalls:
       m_Calls: []
+  chestPrefab: {fileID: 1246952496012387267, guid: e155715f69ceb074d815ee3a775a09e2,
+    type: 3}
