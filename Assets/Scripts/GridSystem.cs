@@ -14,9 +14,10 @@ public class GridSystem : MonoBehaviour
     [Header("Grid Settings")]
     [SerializeField] int _width;
     [SerializeField] int _height;
+    [SerializeField] int _skeletonTotal;
     [SerializeField] Transform _gridOrigin;
     [SerializeField] float _digDelay = 0.5f; 
-    [SerializeField] List<CellConfig> _cellConfig;
+    [SerializeField] MapConfig _mapConfig;
 
     [Header("TileMaps Settings")]
     [SerializeField] Tilemap _tileMapHoles;
@@ -26,10 +27,12 @@ public class GridSystem : MonoBehaviour
 
     private List<Cell> grid;
     private Vector3Int _currentCellPosition;
+    private int skeletonsToSpawn;
 
     private void Start()
     {
         grid = new List<Cell>(_width * _height);
+        skeletonsToSpawn = _skeletonTotal;
 
         for (int x = 0; x < _width; x++)
         {
@@ -38,7 +41,7 @@ public class GridSystem : MonoBehaviour
                 Vector2 position = new Vector2(_gridOrigin.position.x + x, _gridOrigin.position.y + y);
                 Vector3Int cellPosition = _tileMap.WorldToCell(position);
 
-                CellConfig config = _cellConfig.Find(c => c.x == cellPosition.x && c.y == cellPosition.y);
+                CellConfig config = _mapConfig.cellConfig.Find(c => c.x == cellPosition.x && c.y == cellPosition.y);
                 TileBase tile = null;
                 TileType tileType = TileType.NORMAL;
 
@@ -49,10 +52,10 @@ public class GridSystem : MonoBehaviour
                 }
 
                 Cell cell = new Cell(position, cellPosition, tile, tileType, 
-                (cellPos) => 
-                {
-                    config.cellBehaviour.Dig(cellPos);
-                });
+                    (cellPos) => 
+                    {
+                        config.cellBehaviour.Dig(cellPos);
+                    });
 
                 grid.Add(cell);
             }
@@ -151,12 +154,4 @@ public class GridSystem : MonoBehaviour
         yield return new WaitForSecondsRealtime(delay);
         action?.Invoke();
     }
-}
-
-[Serializable]
-public class CellConfig
-{
-    public int x;
-    public int y;
-    public CellBehaviour cellBehaviour;
 }
