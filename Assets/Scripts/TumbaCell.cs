@@ -7,8 +7,11 @@ public class TumbaCell : CellBehaviour
 
     public override void Dig(Vector2 position)
     {
+        
         base.Dig(position);
         var tumba = Instantiate(tumbaPrefab, position, Quaternion.identity);
-        tumba.GetComponent<Tumba>().SetText("3");
+        int adj = FindObjectOfType<GridSystem>().GetAdjacentSkeletons();
+        tumba.GetComponent<Tumba>().SetText(adj.ToString());
+        
     }
 }
