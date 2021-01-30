@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -9,12 +10,11 @@ public class GridSystem : MonoBehaviour
     [SerializeField] int _height;
     [SerializeField] Transform _gridOrigin;
     [SerializeField] Tilemap _tileMap;
-    [SerializeField] Tilemap _chestTilemap;
     [SerializeField] TileBase _holeTile;
     [SerializeField] List<CellConfig> _cellConfig;
 
     private List<Cell> grid;
-    private Vector3Int _currentCell;
+    private Vector3Int _currentCellPosition;
 
     private void Start()
     {
@@ -29,11 +29,15 @@ public class GridSystem : MonoBehaviour
 
                 CellConfig config = _cellConfig.Find(c => c.x == cellPosition.x && c.y == cellPosition.y);
                 TileBase tile = null;
+                TileType tileType = TileType.NORMAL;
 
                 if (config != null)
-                    tile = config.tile;
+                {
+                    tile = config.cellBehaviour.tile;
+                    tileType = config.cellBehaviour.tileType;
+                }
 
-                Cell cell = new Cell(cellPosition, tile);
+                Cell cell = new Cell(cellPosition, tile, tileType,() => { config.cellBehaviour.OnDig?.Invoke(); });
                 grid.Add(cell);
             }
         }
@@ -41,41 +45,70 @@ public class GridSystem : MonoBehaviour
 
     public void Dig(Vector2 cellPosition)
     {
-        _currentCell = _tileMap.WorldToCell(cellPosition);
-        Cell cell = grid.Find(c => c.position.x == _currentCell.x && c.position.y == _currentCell.y);
+        _currentCellPosition = _tileMap.WorldToCell(cellPosition);
+        Cell cell = GetCellAtPosition(_currentCellPosition);
 
         if(!cell.isDigged)
         {
             if (cell.tile != null)
-                _tileMap.SetTile(_currentCell, cell.tile);
+            {
+                _tileMap.SetTile(_currentCellPosition, cell.tile);
+                cell.Dig();
+            }
             else
-                _tileMap.SetTile(_currentCell, _holeTile);
+            {
+                _tileMap.SetTile(_currentCellPosition, _holeTile);
+            }
 
             cell.isDigged = true;
 
+            int adjacents = GetAdjacentSkeletons();
+            Debug.Log($"Adjacents: {adjacents}");
         }
-            Debug.Log($"({cell.position.x}, {cell.position.y})");
+            
+        Debug.Log($"({cell.position.x}, {cell.position.y})");
+    }
+
+    public int GetAdjacentSkeletons()
+    {
+        int total = 0;
+
+        List<Vector3Int> adjacentsCoords = new List<Vector3Int>()
+        {
+            new Vector3Int(_currentCellPosition.x - 1, _currentCellPosition.y, _currentCellPosition.z),
+            new Vector3Int(_currentCellPosition.x + 1, _currentCellPosition.y, _currentCellPosition.z),
+            new Vector3Int(_currentCellPosition.x, _currentCellPosition.y - 1, _currentCellPosition.z),
+            new Vector3Int(_currentCellPosition.x, _currentCellPosition.y + 1, _currentCellPosition.z),
+            new Vector3Int(_currentCellPosition.x - 1, _currentCellPosition.y - 1, _currentCellPosition.z),
+            new Vector3Int(_currentCellPosition.x + 1, _currentCellPosition.y + 1, _currentCellPosition.z),
+            new Vector3Int(_currentCellPosition.x - 1, _currentCellPosition.y + 1, _currentCellPosition.z),
+            new Vector3Int(_currentCellPosition.x + 1, _currentCellPosition.y - 1, _currentCellPosition.z),
+        };
+
+        foreach (var coord in adjacentsCoords)
+        {
+            Cell cell = GetCellAtPosition(coord);
+
+            if (cell != null)
+            {
+                if (cell.tileType == TileType.SKELETON)
+                    total++;
+            }
+        }
+
+        return total;
+    }
+
+    public Cell GetCellAtPosition(Vector3Int position)
+    {
+        return grid.Find(c => c.position.x == position.x && c.position.y == position.y);
     }
 }
 
-[System.Serializable]
+[Serializable]
 public class CellConfig
 {
     public int x;
     public int y;
-    public TileBase tile;
-}
-
-public class Cell
-{
-    public Vector3Int position;
-    public bool isDigged;
-    public TileBase tile;
-
-    public Cell(Vector3Int position, TileBase tile)
-    {
-        this.position = position;
-        this.isDigged = false;
-        this.tile = tile;
-    }
+    public CellBehaviour cellBehaviour;
 }
