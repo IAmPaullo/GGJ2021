@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d017a15bf581cfc48a3054307ad193a3, type: 3}
   m_Name: Skeleton
   m_EditorClassIdentifier: 
-  tile: {fileID: 11400000, guid: ab993b4d4ae082f48af7e878a872c0bb, type: 2}
+  tile: {fileID: 11400000, guid: e01e1a5b8b05ac8448b0def763ac82d6, type: 2}
   tileType: 1
   OnDig:
     m_PersistentCalls:
       m_Calls: []
-  timeAmount: 5
+  timeAmount: 10
+  skullPrefab: {fileID: 5756625996775810243, guid: 9d1ec2076e19e1b4d828e7beea45164c,
+    type: 3}

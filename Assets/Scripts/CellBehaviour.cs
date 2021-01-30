@@ -9,7 +9,7 @@ public class CellBehaviour : ScriptableObject
     public TileType tileType;
     public UnityEvent OnDig;
 
-    public virtual void Dig()
+    public virtual void Dig(Vector2 vector2)
     {
         OnDig?.Invoke();
     }

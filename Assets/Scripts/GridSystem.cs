@@ -38,10 +38,10 @@ public class GridSystem : MonoBehaviour
                     tileType = config.cellBehaviour.tileType;
                 }
 
-                Cell cell = new Cell(cellPosition, tile, tileType, 
-                () => 
+                Cell cell = new Cell(position, cellPosition, tile, tileType, 
+                (cellPos) => 
                 {
-                    config.cellBehaviour.Dig();
+                    config.cellBehaviour.Dig(cellPos);
                 });
 
                 grid.Add(cell);
@@ -59,7 +59,7 @@ public class GridSystem : MonoBehaviour
             if (cell.tile != null)
             {
                 _tileMap.SetTile(_currentCellPosition, cell.tile);
-                cell.Dig();
+                cell.Dig(cell.worldPosition);
             }
             else
             {
@@ -72,7 +72,7 @@ public class GridSystem : MonoBehaviour
             Debug.Log($"Adjacents: {adjacents}");
         }
             
-        Debug.Log($"({cell.position.x}, {cell.position.y})");
+        Debug.Log($"({cell.tilemapPosition.x}, {cell.tilemapPosition.y})");
     }
 
     public int GetAdjacentSkeletons()
@@ -107,7 +107,7 @@ public class GridSystem : MonoBehaviour
 
     public Cell GetCellAtPosition(Vector3Int position)
     {
-        return grid.Find(c => c.position.x == position.x && c.position.y == position.y);
+        return grid.Find(c => c.tilemapPosition.x == position.x && c.tilemapPosition.y == position.y);
     }
 }
 

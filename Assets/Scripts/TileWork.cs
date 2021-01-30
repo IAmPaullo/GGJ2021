@@ -12,7 +12,7 @@ public class TileWork : MonoBehaviour
     {
         //Debug.Log(currentCell);
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             gridSystem.Dig(transform.position);
         }

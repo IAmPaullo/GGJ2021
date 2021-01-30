@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98272d2dc62a2a342afca1aee0530421, type: 3}
+  m_Script: {fileID: 11500000, guid: 20ff9ae67b5214048b60875eef2f2445, type: 3}
   m_Name: Tumba
   m_EditorClassIdentifier: 
-  tile: {fileID: 11400000, guid: 476f514c5d2d80b42a65480fe4cb4683, type: 2}
+  tile: {fileID: 11400000, guid: 14506f60842ecae4bb27e5d47102b4af, type: 2}
   tileType: 2
   OnDig:
     m_PersistentCalls:
       m_Calls: []
+  position: {x: 0, y: 0, z: 0}
+  skullPrefab: {fileID: 5756625996775810243, guid: 9d1ec2076e19e1b4d828e7beea45164c,
+    type: 3}
