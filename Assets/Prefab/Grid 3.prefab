@@ -3836,7 +3836,7 @@ MonoBehaviour:
     type: 3}
   _chestCellMarker: {fileID: 2994639807343769368, guid: 25007066f572d4146938ff2804da3144,
     type: 3}
-  _skeletonCell: {fileID: 11400000, guid: 5a2e4c9a910f3384ba7cc53b0c4b095c, type: 2}
+  _skeletonCell: {fileID: 11400000, guid: 606b00b749802cf4da042d8dee2f561f, type: 2}
   _chestCell: {fileID: 11400000, guid: d2d1754400796ac419bb386596cee363, type: 2}
   _width: 8
   _height: 7
@@ -3850,6 +3850,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e78e7afe0ae74e545af3b6e90875aad2, type: 2}
   _tileMapHoles: {fileID: 7339607692296143146}
   _tileMap: {fileID: 3992393780369420844}
-  _holeTile: {fileID: 11400000, guid: e01e1a5b8b05ac8448b0def763ac82d6, type: 2}
+  _holeTile: {fileID: 11400000, guid: e4758ec1129fa234da72067ca1f25b32, type: 2}
   _tumbaCellBehaviour: {fileID: 11400000, guid: ca38a67ba5126b945aab3a8ade17a8b9,
     type: 2}

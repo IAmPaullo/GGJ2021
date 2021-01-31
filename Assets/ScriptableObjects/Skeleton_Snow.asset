@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d017a15bf581cfc48a3054307ad193a3, type: 3}
+  m_Name: Skeleton_Snow
+  m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: e4758ec1129fa234da72067ca1f25b32, type: 2}
+  tileType: 1
+  OnDig:
+    m_PersistentCalls:
+      m_Calls: []
+  timeAmount: 10
+  skullPrefab: {fileID: 5756625996775810243, guid: 9d1ec2076e19e1b4d828e7beea45164c,
+    type: 3}
