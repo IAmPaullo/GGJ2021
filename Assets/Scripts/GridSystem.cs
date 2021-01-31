@@ -86,8 +86,17 @@ public class GridSystem : MonoBehaviour
     {
         var cellPos = _tileMap.WorldToCell(playerPosition);
         Cell cell = GetCellAtPosition(cellPos);
+
+        float roundedX = RoundToNearestHalf(playerPosition.x); //(Mathf.Round(playerPosition.x * 100)) / 100.0f;
+        float roundedY = RoundToNearestHalf(playerPosition.y);//(Mathf.Round(playerPosition.y * 100)) / 100.0f;
+        Vector2 playerPos = new Vector2(roundedX, roundedY);
         
-        return playerPosition.x == cell.worldPosition.x && playerPosition.y == cell.worldPosition.y;
+        return playerPos.x == cell.worldPosition.x && playerPos.y == cell.worldPosition.y;
+    }
+
+    public float RoundToNearestHalf(float a)
+    {
+        return a = Mathf.Round(a * 2f) * 0.5f;
     }
 
     public void Dig(Vector2 playerPosition)
