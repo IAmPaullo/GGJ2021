@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
         animator.SetFloat("Speed", mvmnt.sqrMagnitude);
 
+        if (mvmnt.x == 0 && mvmnt.y == 0)
+            walkTimer = _walkDelay;
+
         if(walkTimer <= 0f)
         {
             canWalk = true;
