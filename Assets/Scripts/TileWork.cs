@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class TileWork : MonoBehaviour
 {
-    public GridSystem gridSystem;
+    private GridSystem gridSystem;
     private Animator _animator;
     private PlayerController _playerController;
 
@@ -14,6 +14,7 @@ public class TileWork : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _playerController = GetComponent<PlayerController>();
+        gridSystem = FindObjectOfType<GridSystem>();
     }
 
     void Update()
