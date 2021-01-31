@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class CanvasManager : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] TextMeshProUGUI timeChange;
     [SerializeField] GameObject _gameOverPanel;
+    [SerializeField] UnityEvent OnGameOver;
     [SerializeField] GameObject _victoryPanel;
+    [SerializeField] UnityEvent OnVictory;
 
     private GameManager _gameManager;
 
@@ -57,6 +60,7 @@ public class CanvasManager : MonoBehaviour
         {
             _gameOverPanel.SetActive(true);
             _victoryPanel.SetActive(false);
+            OnGameOver?.Invoke();
         }));
     }
 
@@ -66,6 +70,7 @@ public class CanvasManager : MonoBehaviour
         {
             _gameOverPanel.SetActive(false);
             _victoryPanel.SetActive(true);
+            OnVictory?.Invoke();
         }));
     }
 

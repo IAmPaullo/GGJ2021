@@ -22,20 +22,20 @@ AnimationClip:
     - time: 0
       value: {fileID: -6350588602416144940, guid: b65d2620d3574cc4db0559382a2c629f,
         type: 3}
-    - time: 0.083333336
+    - time: 0.11111111
       value: {fileID: -455384977558710789, guid: b65d2620d3574cc4db0559382a2c629f,
         type: 3}
-    - time: 0.16666667
+    - time: 0.22222222
       value: {fileID: -6427487003819538225, guid: b65d2620d3574cc4db0559382a2c629f,
         type: 3}
-    - time: 0.25
+    - time: 0.33333334
       value: {fileID: 1856254320673585975, guid: b65d2620d3574cc4db0559382a2c629f,
         type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 12
+  m_SampleRate: 9
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -59,7 +59,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.33333334
+    m_StopTime: 0.44444445
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -78,4 +78,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.11111111
+    functionName: PlaySfx
+    data: Step
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.33333334
+    functionName: PlaySfx
+    data: Step
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
