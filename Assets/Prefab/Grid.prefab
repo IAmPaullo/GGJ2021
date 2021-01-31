@@ -4785,7 +4785,12 @@ MonoBehaviour:
   _skeletonTotal: 0
   _gridOrigin: {fileID: 6162501927504504817}
   _digDelay: 0.5
-  _mapConfig: {fileID: 11400000, guid: ea38a714ca815594dab3e5417ff63cb8, type: 2}
+  _mapConfigs:
+  - {fileID: 11400000, guid: ea38a714ca815594dab3e5417ff63cb8, type: 2}
+  - {fileID: 11400000, guid: 8c0e1cec8e484cd4fa0efed0fd8f364f, type: 2}
+  - {fileID: 11400000, guid: 70f7a98a9b03fcb4080f85c4194bd7be, type: 2}
+  - {fileID: 11400000, guid: 3625f4da759247441b1d62836b305ffc, type: 2}
+  - {fileID: 11400000, guid: 9858fa48b607e3945957fba10ccf1abd, type: 2}
   _tileMapHoles: {fileID: 6162501928225339502}
   _tileMap: {fileID: 6162501926326881468}
   _holeTile: {fileID: 11400000, guid: e01e1a5b8b05ac8448b0def763ac82d6, type: 2}

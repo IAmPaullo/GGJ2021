@@ -78,31 +78,34 @@ public class GridSystem : MonoBehaviour
         int adjacents = GetAdjacentSkeletons();
         Debug.Log($"Adjacents: {adjacents}");
 
-        if (!cell.isDigged)
+        if (cell != null)
         {
-            if (cell.tile != null)
+            if (!cell.isDigged)
             {
-                ChangeTile(_tileMap, cell.tile, _digDelay, () => 
+                if (cell.tile != null)
                 {
-                    cell.Dig(cell.worldPosition);
-                });
-            }
-            else if(adjacents > 0)
-            {
-                ChangeTile(_tileMapHoles, _holeTile, _digDelay, () =>
+                    ChangeTile(_tileMap, cell.tile, _digDelay, () =>
+                    {
+                        cell.Dig(cell.worldPosition);
+                    });
+                }
+                else if (adjacents > 0)
                 {
-                    _tumbaCellBehaviour.Dig(cell.worldPosition);
-                });
-            }
-            else
-            {
-                ChangeTile(_tileMapHoles, _holeTile, _digDelay, null);
-            }
+                    ChangeTile(_tileMapHoles, _holeTile, _digDelay, () =>
+                    {
+                        _tumbaCellBehaviour.Dig(cell.worldPosition);
+                    });
+                }
+                else
+                {
+                    ChangeTile(_tileMapHoles, _holeTile, _digDelay, null);
+                }
 
-            cell.isDigged = true;
-        }
+                cell.isDigged = true;
+            }
             
-        Debug.Log($"({cell.tilemapPosition.x}, {cell.tilemapPosition.y})");
+            Debug.Log($"({cell.tilemapPosition.x}, {cell.tilemapPosition.y})");
+        }
     }
 
     private void ChangeTile(Tilemap tilemap, TileBase tile, float delay, Action onChanged)

@@ -106,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: -6877036994198504197, guid: fa906e44acf0ac949be9bb6d99e565b2,
+  m_Sprite: {fileID: 8044946406797904040, guid: b65d2620d3574cc4db0559382a2c629f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -197,11 +197,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  _walkDelay: 0.25
   movePoint: {fileID: 4904207447288762525}
   animator: {fileID: 4904207448396674106}
   whatStopsMovement:
     serializedVersion: 2
     m_Bits: 256
+  canMove: 1
+  facingDirection: {x: 0, y: 0}
 --- !u!114 &4904207448396674502
 MonoBehaviour:
   m_ObjectHideFlags: 0
