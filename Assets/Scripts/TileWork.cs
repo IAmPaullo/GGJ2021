@@ -26,9 +26,10 @@ public class TileWork : MonoBehaviour
                 _playerController.canMove = false;
 
                 _animator.SetTrigger("Dig");
-                gridSystem.Dig(((Vector2)transform.position) + _playerController.facingDirection);
+                TileType tileType = gridSystem.Dig(((Vector2)transform.position) + _playerController.facingDirection);
 
-                StartCoroutine(DoAfterTime(.5f, () => { _playerController.canMove = true; }));
+                if (tileType != TileType.SKELETON)
+                    StartCoroutine(DoAfterTime(.5f, () => { _playerController.canMove = true; }));
             }
         }
     }

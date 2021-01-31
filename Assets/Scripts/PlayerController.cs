@@ -7,12 +7,15 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float _walkDelay = .8f;
+    public float freezeDelay = .8f;
+    public float freezeTime = 1f;
     public Transform movePoint;
     Vector2 mvmnt;
     public Animator animator;
     public LayerMask whatStopsMovement;
     public bool canMove = true;
     public Vector2 facingDirection;
+
     private float walkTimer;
     private bool canWalk;
 
@@ -39,13 +42,9 @@ public class PlayerController : MonoBehaviour
             walkTimer = _walkDelay;
 
         if(walkTimer <= 0f)
-        {
             canWalk = true;
-        }
         else
-        {
             walkTimer -= Time.deltaTime;
-        }
 
         if (Vector3.Distance(transform.position, movePoint.position) <= 0.3)
         {
@@ -84,5 +83,27 @@ public class PlayerController : MonoBehaviour
         }
 
         Debug.DrawRay(transform.position, facingDirection, Color.red);
+    }
+    public void TakeDamage()
+    {
+        StartCoroutine(DoAfterTime(freezeDelay, () => 
+        {
+            animator.SetTrigger("Damage");
+            Freeze(freezeTime);
+        }));
+    }
+
+    public void Freeze(float delay)
+    {
+        canMove = false;
+        StartCoroutine(DoAfterTime(delay, () => 
+        {
+            canMove = true; 
+        }));
+    }
+    private IEnumerator DoAfterTime(float delay, Action action)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        action?.Invoke();
     }
 }

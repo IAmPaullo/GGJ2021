@@ -98,8 +98,7 @@ public class GridSystem : MonoBehaviour
     {
         return a = Mathf.Round(a * 2f) * 0.5f;
     }
-
-    public void Dig(Vector2 playerPosition)
+    public TileType Dig(Vector2 playerPosition)
     {
         _currentCellPosition = _tileMap.WorldToCell(playerPosition);
         Cell cell = GetCellAtPosition(_currentCellPosition);
@@ -134,7 +133,11 @@ public class GridSystem : MonoBehaviour
             }
             
             Debug.Log($"({cell.tilemapPosition.x}, {cell.tilemapPosition.y})");
+
+            return cell.tileType;
         }
+
+        return TileType.NORMAL;
     }
 
     private void ChangeTile(Tilemap tilemap, TileBase tile, float delay, Action onChanged)

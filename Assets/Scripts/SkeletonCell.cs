@@ -11,5 +11,6 @@ public class SkeletonCell : CellBehaviour
         base.Dig(position);
         FindObjectOfType<GameManager>().DecreaseTimer(timeAmount);
         Instantiate(skullPrefab, position, Quaternion.identity);
+        FindObjectOfType<PlayerController>().TakeDamage();
     }
 }
