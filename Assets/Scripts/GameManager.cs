@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(0);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 
     void UpdateTime()
