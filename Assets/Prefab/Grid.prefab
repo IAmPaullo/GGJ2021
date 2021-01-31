@@ -4778,11 +4778,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220155a2a7a14184fabb16bfdc5f3d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _debug: 0
+  _normalCellMarker: {fileID: 1043523998061639642, guid: 9a564385ec2a34a468f99f432c409503,
+    type: 3}
+  _skullCellMarker: {fileID: 3443387150000231771, guid: ba506ba9a62da1e45bc3e67f0637137c,
+    type: 3}
+  _chestCellMarker: {fileID: 2994639807343769368, guid: 25007066f572d4146938ff2804da3144,
+    type: 3}
   _skeletonCell: {fileID: 11400000, guid: 5a2e4c9a910f3384ba7cc53b0c4b095c, type: 2}
   _chestCell: {fileID: 11400000, guid: d2d1754400796ac419bb386596cee363, type: 2}
   _width: 11
   _height: 9
-  _skeletonTotal: 0
   _gridOrigin: {fileID: 6162501927504504817}
   _digDelay: 0.5
   _mapConfigs:

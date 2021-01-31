@@ -7,6 +7,12 @@ using UnityEngine.Tilemaps;
 
 public class GridSystem : MonoBehaviour
 {
+    [Header("Debug")]
+    [SerializeField] bool _debug;
+    [SerializeField] GameObject _normalCellMarker;
+    [SerializeField] GameObject _skullCellMarker;
+    [SerializeField] GameObject _chestCellMarker;
+
     [Header("RandomSettings")]
     [SerializeField] SkeletonCell _skeletonCell;
     [SerializeField] ChestCell _chestCell;
@@ -14,7 +20,6 @@ public class GridSystem : MonoBehaviour
     [Header("Grid Settings")]
     [SerializeField] int _width;
     [SerializeField] int _height;
-    [SerializeField] int _skeletonTotal;
     [SerializeField] Transform _gridOrigin;
     [SerializeField] float _digDelay = 0.5f; 
     [SerializeField] List<MapConfig> _mapConfigs;
@@ -27,12 +32,12 @@ public class GridSystem : MonoBehaviour
 
     private List<Cell> grid;
     private Vector3Int _currentCellPosition;
-    private int skeletonsToSpawn;
 
     private void Start()
     {
         grid = new List<Cell>(_width * _height);
-        skeletonsToSpawn = _skeletonTotal;
+        MapConfig mapConfig = _mapConfigs[UnityEngine.Random.Range(0, _mapConfigs.Count)];
+        Debug.Log($"[GridSystem] Layout {mapConfig.name} loaded!");
 
         for (int x = 0; x < _width; x++)
         {
@@ -41,7 +46,6 @@ public class GridSystem : MonoBehaviour
                 Vector2 position = new Vector2(_gridOrigin.position.x + x, _gridOrigin.position.y + y);
                 Vector3Int cellPosition = _tileMap.WorldToCell(position);
 
-                MapConfig mapConfig = _mapConfigs[UnityEngine.Random.Range(0, _mapConfigs.Count)];
                 CellConfig config = mapConfig.cellConfig.Find(c => c.x == cellPosition.x && c.y == cellPosition.y);
                 TileBase tile = null;
                 TileType tileType = TileType.NORMAL;
@@ -59,6 +63,22 @@ public class GridSystem : MonoBehaviour
                     });
 
                 grid.Add(cell);
+
+                if(_debug)
+                {
+                    switch (tileType)
+                    {
+                        case TileType.NORMAL:
+                            Instantiate(_normalCellMarker, position, Quaternion.identity);
+                            break;
+                        case TileType.SKELETON:
+                            Instantiate(_skullCellMarker, position, Quaternion.identity);
+                            break;
+                        case TileType.CHEST:
+                            Instantiate(_chestCellMarker, position, Quaternion.identity);
+                            break;
+                    }
+                }
             }
         }
     }
